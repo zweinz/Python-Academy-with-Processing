@@ -1,0 +1,129 @@
+Python Handbook:
+
+COMMENTS
+# this code will not be executed
+
+BOOLEANS
+In other languages, you might write  (true || false) == true
+In Python,  (True or False) == True
+You can also say (True and False) == False
+
+VARIABLES
+x = 3
+x += 2
+my_variable = “Hello”
+
+IF STATEMENTS:
+if a == b:
+	# do something
+elif a == c:
+	# do something else
+else:
+	# do something else
+
+# un-indent to end the if / else statement
+
+LISTS:
+my_list = [1, 2, 3, 4, 5]
+my_other_list = [3, 6, 8]
+
+FOR LOOPS:
+for x in my_other_list:
+	print x
+
+# un-indent to end the for-loop
+
+WHILE LOOPS:
+i = 0
+while i < 10:
+	print i
+	i = i + 1
+
+# un-indent to end the while loop
+
+
+FUNCTIONS:
+
+Usually, a python script is just executed one line after the next.  By DEFINING A FUNCTION, we can write code that we can "save" to execute at any time.  For instance:
+
+def say_hi():
+	print "Hello"
+	print "How Are You"
+	# any other code you want to be executed in this function
+
+# un-indent to end the function definition
+
+Now, this code by itself doesn't do anything, but I can CALL it by writing
+
+say_hi()
+say_hi()
+say_hi()
+
+This will run the code inside the say_hi function 3 times.  We can also PASS certain information to a function.
+
+def say_hi(name):
+	print "Hello, " + name
+	print "How are you?"
+
+Now when we write:
+
+say_hi("Zach")
+
+we are passing "Zach" in as the "name" PARAMETER.  This means that it will execute the code in say_hi with name == "Zach".  This will print "Hello, Zach.  How are you?".
+
+Likewise, say_hi("Megan") will print "Hello, Megan.  How are you?".
+
+Finally, a function can RETURN A VALUE.  It would be silly to write 5 + say_hi() because say_hi() doesn't have any value.  
+
+However, I could write a function like
+
+def cube(num):
+	cubed_num = num * num * num;
+	return cubed_num
+
+That last line, the return, gives the function a value.  In this case cube(3) just *is* 27.  That means, I can say cube(3) + 5 == 32.  I can say cube(1) - 1 = 0.  I can say cube(0) * cube(4) == 0.
+
+
+
+CLASSES AND OBJECTS:
+
+An CLASS is an abstract type of thing.  String, List, Chair, Ball.  An OBJECT is a specific INSTANCE of a class.  For instance, an object of type String would be "Hello" or "Goodbye".  An object of type List would be [1, 3, 5] or ["Hi", "Bye", "Hola"].  An object of type Chair would be The Red Chair I'm Sitting In or The Blue Swivel Chair Over There.  An object of type Ball would be The Bouncy Ball at point (3, 5).
+
+Of course, python already knows what a String is and what a List is, but what about a Ball?  We have to DEFINE A NEW CLASS:
+
+class Ball:
+	x = 3
+	y = 5
+	diameter = 10
+
+	def render(self):
+		# set the color to blue
+		fill(0, 0, 255) 
+
+		# draw a circle with the correct properties
+		ellipse(self.x, self.y, self.diameter, self.diameter)
+
+	# all any other indented code "belongs to Ball"
+
+# un-indent to end the class Ball definition
+
+Now, Ball is a type that python knows, just like String or List.  I can say
+
+s1 = "String1"
+s2 = "String2"
+b1 = Ball()
+b2 = Ball()
+
+Now, I have 2 objects of type String and 2 different objects of type Ball.  The creation of the object is the name of the object followed by parentheses (like we're calling a function).
+
+To access the properties or methods of an object, we use DOT NOTATION.  This means:
+b1.x = 7
+b2.x = 10
+
+This set the "x" property of b1 to be 7 and the "x" property of b2 to be 10.
+Now what about the methods?  The same way.  
+
+b1.render() would draw b1 to the screen at (7, 5) and 
+b2.render() would draw b2 to the screen at (10, 5)
+
+Note that when we originally defined the render method, we included the parameter self.  That's so the method knows which object it is.  We don't need to include self when we use dot notation because it's included automatically.
