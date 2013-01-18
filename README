@@ -1,0 +1,1 @@
+To run a file with the processing library, use java -jar processing-py.jar my_python_code.py
