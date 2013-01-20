@@ -127,3 +127,10 @@ b1.render() would draw b1 to the screen at (7, 5) and
 b2.render() would draw b2 to the screen at (10, 5)
 
 Note that when we originally defined the render method, we included the parameter self.  That's so the method knows which object it is.  We don't need to include self when we use dot notation because it's included automatically.
+
+
+PROCESSING:
+
+the setup() function is called only at first
+the draw() function is called every frame
+the origin is in the top-left with the y-axis pointing down.
