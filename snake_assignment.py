@@ -74,12 +74,11 @@ def draw():
 	backwards_items = reversed(snake_list)
 	backwards_list = list(backwards_items)
 	for index, segment in enumerate(backwards_list):
-		segment_in_front = backwards_list[index + 1]
-
 		if segment == leader:
 			# TODO set the segment's direction to leader_direction
 			pass
 		else:
+			segment_in_front = backwards_list[index + 1]
 			# TODO set the segment's direction to the segment_in_front's direction
 			pass
 
