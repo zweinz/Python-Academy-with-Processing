@@ -11,7 +11,7 @@ class Paddle:
 	def render(self):
 		rect(self.x, self.y, self.w, self.h)
 
-###### A Paddle has an x coordinate, y coordinate, v_x, and v_y.  
+###### A Ball has an x coordinate, y coordinate, v_x, and v_y.  
 ###### v_x is the x-direction it's headed.  v_x is 1 if the ball is going right, or -1 if the ball is going left
 ###### v_y is the y-direction.  v_y is 1 if the ball is going down, or -1 if the ball is going up
 ###### it also has a render method that draws the Ball and moves it to the next location
